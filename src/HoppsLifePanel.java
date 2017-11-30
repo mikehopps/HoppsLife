@@ -12,13 +12,14 @@ public class HoppsLifePanel extends JPanel{
         grid = new Cell[20][20];
         for (int r = 0; r < grid.length; r++) {
             for (int c = 0; c < grid[0].length; c++) {
-                grid[r][c] = new Cell(r, c, grid, 40);
+                grid[r][c] = new Cell(r, c, 40);
+                //give a 50% of spawn()?
             }
         }
 
     }
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Grid Graphics");
+        JFrame frame = new JFrame("Life of Hopps");
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
         int width = 800;
         int height = 800;
