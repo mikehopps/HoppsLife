@@ -18,7 +18,7 @@ public class Cell {
 
     }
     public void spawn(){
-
+        isAlive = true;
     }
 
     public int numNeighbors(Cell[][] grid){
@@ -26,7 +26,12 @@ public class Cell {
         return 0;
     }
     public void draw(Graphics2D g2){
-
+        g2.drawRect(col*size, row*size, size, size);
+        if(isAlive)
+            g2.fillRect(col*size, row*size, size, size);
+    }
+    public boolean getIsAlive(){
+        return isAlive;
     }
 
 
