@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 /**
  * Created by michael_hopps on 11/29/17.
@@ -39,6 +41,41 @@ public class HoppsLifePanel extends JPanel{
             }
         });
         timer.start();
+
+        addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode() == KeyEvent.VK_SPACE){
+                    if(timer.isRunning())
+                        timer.stop();
+                    else
+                        timer.start();
+                }
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
+
+        JButton butt = new JButton("TEST");
+        butt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+                grabFocus();
+            }
+        });
+        add(butt);
+
     }
 
     public void paintComponent(Graphics g) {
